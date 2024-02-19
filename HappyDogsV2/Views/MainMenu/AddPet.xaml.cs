@@ -8,5 +8,10 @@ public partial class AddPet : ContentPage
 	{
 		InitializeComponent();
 		BindingContext = new AddPetViewModel(Navigation);
+		
 	}
+
+	
 }
+
+
