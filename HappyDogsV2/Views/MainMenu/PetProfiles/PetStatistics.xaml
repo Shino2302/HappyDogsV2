@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HappyDogsV2.Views.MainMenu.PetProfiles.PetStatistics"
+             xmlns:drawables="clr-namespace:HappyDogsV2.GraphicResources"
+             Title="PetStatistics">
+    <ContentPage.Resources>
+        <drawables:MeterDrawable x:Key="meterDrawable"/>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Label Text="Comida en contenedor"
+       FontSize="Large"
+       FontAttributes="Bold"
+       Margin="5,10,0,0"/>
+        <GraphicsView Drawable="{StaticResource meterDrawable}"
+                      x:Name="MeterDrawableView"
+                      Margin="10,-80"
+                      Rotation="90"
+                      WidthRequest="50"
+                      HeightRequest="350"
+                      VerticalOptions="Start"/>
+        <Label Text="Historial:"
+               Margin="5,-50,0,0"
+               FontSize="Large"
+               FontAttributes="Bold"/>
+        
+        <Grid ColumnDefinitions="160,*"
+              RowDefinitions="*, 60">
+            <Frame Grid.Column="0"
+                   Grid.Row="0"
+                   HasShadow="False">
+                <Label Text="Temperatura:"
+                       FontSize="Medium"/>
+            </Frame>
+            <Frame Grid.Column="1"
+                   Grid.Row="0"
+                   HasShadow="False">
+            </Frame>
+            <Frame Grid.Column="0"
+                   Grid.Row="1"
+                   HasShadow="False">
+                <Label Text="Comidas:"
+                       FontSize="Medium"/>
+            </Frame>
+            <Frame Grid.Column="1"
+                   Grid.Row="1"
+                   HasShadow="False">
+                
+            </Frame>
+            
+        </Grid>
+        <Button Text="Do Not Touch This Button"
+                BackgroundColor="Red"
+                TextColor="White"
+                Clicked="DontTouchTheButton"
+                Margin="10"
+                VerticalOptions="End"/>
+    </StackLayout>
+</ContentPage>

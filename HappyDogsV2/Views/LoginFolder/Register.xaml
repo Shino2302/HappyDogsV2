@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HappyDogsV2.Views.LoginFolder.Register"
+             Title="Register"
+             >
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#EEE"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="FontSize" Value="Large"/>
+        </Style>
+    </ContentPage.Resources>
+    <Grid>
+        <Frame BackgroundColor="#123"
+           Margin="10,155,10,5">
+            <StackLayout>
+                <Label Text="Email:"/>
+                <Frame BackgroundColor="#012"
+                   Margin="0,0,0,10">
+                    <Entry Placeholder="Your Email"
+                       TextColor="#EEE"
+                       Margin="-8"
+                       Text="{Binding Email}"
+                       FontSize="Medium"/>
+                </Frame>
+                <Label Text="Password:"/>
+                <Frame BackgroundColor="#012"
+                       Margin="0,0,0,10">
+                    <Entry Placeholder="Your Password"
+                       TextColor="#EEE"
+                       Margin="-8"
+                       Text="{Binding Password}"
+                       IsPassword="True"
+                       FontSize="Medium"/>
+                </Frame>
+
+                <Label Text="Password Confirm:"/>
+                <Frame BackgroundColor="#012"
+                       Margin="0,0,0,10">
+                    <Entry Placeholder="Your Password"
+                           TextColor="#EEE"
+                           Margin="-8"
+                           Text="{Binding PasswordConfirm}"
+                           IsPassword="True"
+                           FontSize="Medium"/>
+                </Frame>
+
+                <Button Text="Register"
+                    Margin="0,10,0,0"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Command="{Binding RegisterCommand}"/>
+            </StackLayout>
+        </Frame>
+        <Frame HeightRequest="140"
+           WidthRequest="140"
+           CornerRadius="70"
+           HorizontalOptions="Center"
+           IsClippedToBounds="True"
+           Padding="0"
+           BorderColor="Gray"
+           Margin="0,5,0,600">
+            <Image Aspect="AspectFit"
+               Source="dotnet_bot.png"
+               SemanticProperties.Description="Cute dot net bot waving hi to you!"
+               HeightRequest="140"
+               WidthRequest="140"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+        </Frame>
+    </Grid>
+</ContentPage>

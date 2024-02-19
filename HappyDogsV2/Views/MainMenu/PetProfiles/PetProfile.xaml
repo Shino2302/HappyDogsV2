@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HappyDogsV2.Views.MainMenu.PetProfiles.PetProfile"
+             Title="PetProfile">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Camara" Order="Secondary" Command="{Binding GoToCameraCommand}"/>
+        <ToolbarItem Text="Estadisticas" Order="Secondary" Command="{Binding GoToStatisticsCommand}"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Frame HeightRequest="300"
+               WidthRequest="300"
+               CornerRadius="150"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsClippedToBounds="True"
+               Padding="0"
+               BorderColor="Gray"
+               Margin="0,15">
+            <Image Aspect="AspectFit"
+                   Source="{Binding Image}"
+                   SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                   HeightRequest="400"
+                   WidthRequest="400"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Center" />
+        </Frame>
+        <Label Text="{Binding NameOfPet}"
+               TextColor="#111"
+               FontSize="Title"
+               FontAutoScalingEnabled="True"
+               HorizontalTextAlignment="Center"
+               Margin="0,0,0,0"
+               FontAttributes="Bold"/>
+        <Frame BackgroundColor="#012"
+               Margin="15,10,15,0">
+            <Grid RowDefinitions="50,*"
+                  ColumnDefinitions="200,200">
+                <Label Text="Raza:"
+                       FontSize="Large"
+                       TextColor="#DDD"
+                       FontAttributes="Bold"
+                       Margin="5,10"
+                       FontAutoScalingEnabled="True"
+                       Grid.Column="0"
+                       Grid.Row="0"/>
+                <Label Text="Perro"
+                       FontSize="Large"
+                       TextColor="#DDD"
+                       FontAttributes="Bold"
+                       Margin="50,10,0,10"
+                       FontAutoScalingEnabled="True"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                       TextDecorations="Underline"/>
+                <Label Text="Edad:"
+                       FontSize="Large"
+                       TextColor="#DDD"
+                       FontAttributes="Bold"
+                       Margin="5,10"
+                       FontAutoScalingEnabled="True"
+                       Grid.Column="0"
+                       Grid.Row="1"/>
+                <Label Text="1 año"
+                       FontSize="Large"
+                       TextColor="#DDD"
+                       FontAttributes="Bold"
+                       Margin="50,10,0,10"
+                       FontAutoScalingEnabled="True"
+                       Grid.Column="1"
+                       Grid.Row="1"
+                       TextDecorations="Underline"/>
+            </Grid>
+        </Frame>
+        <Grid Margin="0,110,0,0">
+            <Button HorizontalOptions="Start"
+                    VerticalOptions="End"
+                    Margin="10,0,0,0"
+                    Text="Eliminar Mascota"
+                    FontSize="Medium"
+                    FontAutoScalingEnabled="True"
+                    Command="{Binding DeleteCommand}"
+                    FontAttributes="Bold"/>
+            <Button HorizontalOptions="End"
+                    Margin="0,0,10,0"
+                    VerticalOptions="End"
+                    Text="Editar Información"
+                    FontSize="Medium"
+                    FontAutoScalingEnabled="True"
+                    FontAttributes="Bold"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
