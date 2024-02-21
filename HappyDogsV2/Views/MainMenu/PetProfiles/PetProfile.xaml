@@ -6,6 +6,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Camara" Order="Secondary" Command="{Binding GoToCameraCommand}"/>
         <ToolbarItem Text="Estadisticas" Order="Secondary" Command="{Binding GoToStatisticsCommand}"/>
+        <ToolbarItem Text="Dispensador" Order="Secondary" Command="{Binding GoToDispenserConfigCommand}"/>
     </ContentPage.ToolbarItems>
     <StackLayout>
         <Frame HeightRequest="300"
