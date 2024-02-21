@@ -89,9 +89,6 @@
 	  <MauiXaml Update="Views\MainMenu\PetProfiles\ConfigDispenser.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\MainMenu\PetProfiles\EditPet.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\MainMenu\PetProfiles\PetCamera.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

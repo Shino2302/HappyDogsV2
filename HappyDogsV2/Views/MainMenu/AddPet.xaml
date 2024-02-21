@@ -4,10 +4,39 @@
              x:Class="HappyDogsV2.Views.AddPet"
              Title="Add Pet"
              IconImageSource="plus.png">
-    <VerticalStackLayout>
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+        Grid.Row="0"
+        Text="Agregar Mascota"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        FontSize="28"
+        FontAttributes="Italic"
+        TextColor="Black"/>
+
+        <StackLayout Grid.Row="1" Margin="20">
+            <Entry Placeholder="Nombre de Perro" PlaceholderColor="Black"/>
+            <Entry Placeholder="Raza" PlaceholderColor="Black"/>
+            <Picker Title="Forma de alimentar al perro:">
+                <Picker.Items>
+                    <x:String>Con comida seca</x:String>
+                    <x:String>Con comida húmeda</x:String>
+                    <x:String>Con comida casera</x:String>
+                    <x:String>Con comida cruda</x:String>
+                </Picker.Items>
+            </Picker>
+            <Button 
+            Text="Agregar" 
+            Margin="0,20,0,0"
+            BackgroundColor="#007bff"
+            TextColor="White"
+            CornerRadius="30"/>
+        </StackLayout>
+    </Grid>
+
 </ContentPage>
