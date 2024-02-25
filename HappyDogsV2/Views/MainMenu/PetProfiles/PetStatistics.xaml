@@ -5,6 +5,7 @@
              xmlns:drawables="clr-namespace:HappyDogsV2.GraphicResources"
              Title="PetStatistics">
     <ContentPage.Resources>
+        <!-- comentario para el git-->
         <drawables:MeterDrawable x:Key="meterDrawable"/>
     </ContentPage.Resources>
     <StackLayout>
