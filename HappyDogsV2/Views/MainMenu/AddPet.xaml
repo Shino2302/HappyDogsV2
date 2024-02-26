@@ -3,57 +3,83 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HappyDogsV2.Views.AddPet"
              Title="Add Pet"
-             IconImageSource="plus.png">
-    <Grid BackgroundColor="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
-        <Label 
-        Grid.Row="0"
-        Text="Agregar Mascota"
-        HorizontalOptions="Center"
-        VerticalOptions="Center"
-        FontSize="36" 
-            FontAttributes="Bold"
-            
-            TextColor="#333333"/>
-            
 
-            <StackLayout Grid.Row="1" Margin="20">
-                <Entry Placeholder="Nombre de Perro" PlaceholderColor="#666666"/>
-          
-                <Entry Placeholder="Raza" PlaceholderColor="#666666"/>
-                <Picker Title="Forma de alimentar al perro:"
-                TextColor="#333333"
-                    FontSize="20">
-                    <!-- Aumento del tamaño de la fuente -->
-                    <Picker.Items>
-                        <x:String>Con comida seca</x:String>
-                        <x:String>Con comida húmeda</x:String>
-                        <x:String>Con comida casera</x:String>
-                        <x:String>Con comida cruda</x:String>
-                    </Picker.Items>
-                </Picker>
-                <Button x:Name="AgregarButton"
-                Text="Agregar" 
-                Margin="0,20,0,0"
-                BackgroundColor="#007bff"
-                TextColor="White"
-                CornerRadius="30"
-                FontSize="20" 
-                    FontAttributes="Bold">
-                   
-                    <Button.Triggers>
-                        <DataTrigger TargetType="Button"
-                             Binding="{Binding Source={x:Reference AgregarButton}, Path=IsPressed}"
-                             Value="True">
-                            <Setter Property="BackgroundColor" Value="Orange" />
-                        </DataTrigger>
-                    </Button.Triggers>
-                </Button>
-            </StackLayout>
-    </Grid>
+             IconImageSource="plus.png"
+             BackgroundImageSource="fondocolor.png">
+    <StackLayout>
+        <Grid>
+            <Frame BackgroundColor="#ff7711"
+           Margin="10,155,10,5"
+                   BorderColor="Black">
+                <StackLayout>
+                    <Label Text="Name of Dog" TextColor="White" FontAutoScalingEnabled="True"/>
+                    <Frame BackgroundColor="#000"
+                           Margin="0,0,0,10">
+                    <Entry Placeholder="Pet Name"
+                       TextColor="#fff"
+                       Margin="-8"
+                       Text="{Binding PetName}"
+                       FontSize="Medium"/>
+                    </Frame>
+                    <Label Text="dog breed" TextColor="White" FontAutoScalingEnabled="True"/>
+                    <Frame BackgroundColor="#000"
+                       Margin="0,0,0,10">
+                       <Entry Placeholder="dog breed"
+                       TextColor="#fff"
+                       Margin="-8"
+                       Text="{Binding PetRaze}"
+                       FontSize="Medium"/>
+                    </Frame>
+
+                    <Picker Title="Dispensador"
+                            TitleColor="White"
+                            FontSize="Large"
+                            TextColor="White"
+                            >
+                        <Picker.ItemsSource >
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Default</x:String>
+                                <x:String>Baboon</x:String>
+                                <x:String>Capuchin Monkey</x:String>
+                                <x:String>Blue Monkey</x:String>
+                                <x:String>Squirrel Monkey</x:String>
+                                <x:String>Golden Lion Tamarin</x:String>
+                                <x:String>Howler Monkey</x:String>
+                                <x:String>Japanese Macaque</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Button Text="Register"
+                    Margin="0,10,0,0"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Command="{Binding RegisterPetCommand}"
+                            BackgroundColor="White"
+                            TextColor="#ff7711"
+                            BorderColor="Black"
+                            BorderWidth="2"/>
+                </StackLayout>
+            </Frame>
+            <Frame HeightRequest="140"
+           WidthRequest="140"
+           CornerRadius="70"
+           HorizontalOptions="Center"
+           IsClippedToBounds="True"
+           Padding="0"
+           BorderColor="Black"
+           Margin="0,5,0,600">
+                <Image Aspect="AspectFit"
+               Source="dotnet_bot.png"
+               SemanticProperties.Description="Cute dot net bot waving hi to you!"
+               HeightRequest="140"
+               WidthRequest="140"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+            </Frame>
+        </Grid>
+
+    </StackLayout>
 
 </ContentPage>

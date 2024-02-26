@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HappyDogsV2.Views.MyPets"
              Title="My Pets"
-             IconImageSource="huella.png">
+             IconImageSource="huella.png"
+             BackgroundImageSource="fondocolor.png">
     <Grid>
         <CollectionView ItemsSource="{Binding MascotasDeEjemplo}"
                         SelectedItem="{Binding PetSelect}"
