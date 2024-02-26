@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HappyDogsV2.Views.MainMenu.PetProfiles.PetProfile"
-             Title="PetProfile">
+             Title="PetProfile"
+             BackgroundImageSource="fondocolor.png">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Camara" Order="Secondary" Command="{Binding GoToCameraCommand}"/>
         <ToolbarItem Text="Estadisticas" Order="Secondary" Command="{Binding GoToStatisticsCommand}"/>
@@ -33,13 +34,14 @@
                HorizontalTextAlignment="Center"
                Margin="0,0,0,0"
                FontAttributes="Bold"/>
-        <Frame BackgroundColor="#012"
-               Margin="15,10,15,0">
+        <Frame BackgroundColor="#ff7711"
+               Margin="15,10,15,0"
+               BorderColor="Black">
             <Grid RowDefinitions="50,*"
                   ColumnDefinitions="200,200">
                 <Label Text="Raza:"
                        FontSize="Large"
-                       TextColor="#DDD"
+                       TextColor="#fff"
                        FontAttributes="Bold"
                        Margin="5,10"
                        FontAutoScalingEnabled="True"
@@ -47,7 +49,7 @@
                        Grid.Row="0"/>
                 <Label Text="Perro"
                        FontSize="Large"
-                       TextColor="#DDD"
+                       TextColor="#fff"
                        FontAttributes="Bold"
                        Margin="50,10,0,10"
                        FontAutoScalingEnabled="True"
@@ -56,7 +58,7 @@
                        TextDecorations="Underline"/>
                 <Label Text="Edad:"
                        FontSize="Large"
-                       TextColor="#DDD"
+                       TextColor="#fff"
                        FontAttributes="Bold"
                        Margin="5,10"
                        FontAutoScalingEnabled="True"
@@ -64,7 +66,7 @@
                        Grid.Row="1"/>
                 <Label Text="1 año"
                        FontSize="Large"
-                       TextColor="#DDD"
+                       TextColor="#fff"
                        FontAttributes="Bold"
                        Margin="50,10,0,10"
                        FontAutoScalingEnabled="True"
@@ -81,14 +83,22 @@
                     FontSize="Medium"
                     FontAutoScalingEnabled="True"
                     Command="{Binding DeleteCommand}"
-                    FontAttributes="Bold"/>
+                    FontAttributes="Bold"
+                    TextColor="#ff7711"
+                    BorderColor="Black"
+                    BorderWidth="2"
+                    BackgroundColor="White"/>
             <Button HorizontalOptions="End"
                     Margin="0,0,10,0"
                     VerticalOptions="End"
                     Text="Editar Información"
                     FontSize="Medium"
                     FontAutoScalingEnabled="True"
-                    FontAttributes="Bold"/>
+                    FontAttributes="Bold"
+                    TextColor="#ff7711"
+                    BorderColor="Black"
+                    BorderWidth="2"
+                    BackgroundColor="White"/>
         </Grid>
     </StackLayout>
 </ContentPage>
