@@ -83,22 +83,26 @@
                     FontSize="Medium"
                     FontAutoScalingEnabled="True"
                     Command="{Binding DeleteCommand}"
+
                     FontAttributes="Bold"
                     TextColor="#ff7711"
                     BorderColor="Black"
                     BorderWidth="2"
                     BackgroundColor="White"/>
+
             <Button HorizontalOptions="End"
                     Margin="0,0,10,0"
                     VerticalOptions="End"
                     Text="Editar Información"
                     FontSize="Medium"
+
                     FontAutoScalingEnabled="True"
                     FontAttributes="Bold"
                     TextColor="#ff7711"
                     BorderColor="Black"
                     BorderWidth="2"
                     BackgroundColor="White"/>
+
         </Grid>
     </StackLayout>
 </ContentPage>

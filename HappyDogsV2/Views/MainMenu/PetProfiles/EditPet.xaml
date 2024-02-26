@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HappyDogsV2.Views.MainMenu.PetProfiles.EditPet"
+             Title="EditPet">
+    <ContentPage.Content>
+        <Grid Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Text="Editar Perro" FontSize="24" FontAttributes="Bold"/>
+
+            <Label Grid.Row="1" Text="Nombre de Perro:"/>
+            <Entry Grid.Row="1" Placeholder="Ingrese el nombre del perro"/>
+
+            <Label Grid.Row="2" Text="Raza:"/>
+            <Entry Grid.Row="2" Placeholder="Ingrese la raza del perro"/>
+
+            <Button Text="Editar"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

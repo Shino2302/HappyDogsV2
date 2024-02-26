@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HappyDogsV2.Views.AddPet"
              Title="Add Pet"
+
+
              IconImageSource="plus.png"
              BackgroundImageSource="fondocolor.png">
     <StackLayout>
@@ -79,4 +81,5 @@
         </Grid>
 
     </StackLayout>
+
 </ContentPage>

@@ -57,17 +57,22 @@ namespace HappyDogsV2.ViewModel
         {
             await Navigation.PushAsync(new PetStatistics());
         }
-        public async Task GoToDispenserConfig()
+
+        public async Task GoToEdit()
         {
-            await Navigation.PushAsync(new ConfigDispenser());
+            await Navigation.PushAsync(new EditPet());
         }
+        
         #endregion
 
         #region COMMANDS
         public ICommand DeleteCommand => new Command(async () => await PetToDelete());
         public ICommand GoToCameraCommand => new Command(async (pet) => await GoToPetCamera());
         public ICommand GoToStatisticsCommand => new Command(async () => await GoToStatisticsPet());
-        public ICommand GoToDispenserConfigCommand => new Command(async () => await GoToDispenserConfig());
+
+        public ICommand GoToEditCommand => new Command(async () => await GoToEdit());
+
+
 
         #endregion
     }
