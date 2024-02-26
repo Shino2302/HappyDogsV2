@@ -6,7 +6,7 @@
              IconImageSource="plus.png">
     <Grid BackgroundColor="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -15,28 +15,45 @@
         Text="Agregar Mascota"
         HorizontalOptions="Center"
         VerticalOptions="Center"
-        FontSize="28"
-        FontAttributes="Italic"
-        TextColor="Black"/>
+        FontSize="36" 
+            FontAttributes="Bold"
+            
+            TextColor="#333333"/>
+            
 
-        <StackLayout Grid.Row="1" Margin="20">
-            <Entry Placeholder="Nombre de Perro" PlaceholderColor="Black"/>
-            <Entry Placeholder="Raza" PlaceholderColor="Black"/>
-            <Picker Title="Forma de alimentar al perro:">
-                <Picker.Items>
-                    <x:String>Con comida seca</x:String>
-                    <x:String>Con comida húmeda</x:String>
-                    <x:String>Con comida casera</x:String>
-                    <x:String>Con comida cruda</x:String>
-                </Picker.Items>
-            </Picker>
-            <Button 
-            Text="Agregar" 
-            Margin="0,20,0,0"
-            BackgroundColor="#007bff"
-            TextColor="White"
-            CornerRadius="30"/>
-        </StackLayout>
+            <StackLayout Grid.Row="1" Margin="20">
+                <Entry Placeholder="Nombre de Perro" PlaceholderColor="#666666"/>
+          
+                <Entry Placeholder="Raza" PlaceholderColor="#666666"/>
+                <Picker Title="Forma de alimentar al perro:"
+                TextColor="#333333"
+                    FontSize="20">
+                    <!-- Aumento del tamaño de la fuente -->
+                    <Picker.Items>
+                        <x:String>Con comida seca</x:String>
+                        <x:String>Con comida húmeda</x:String>
+                        <x:String>Con comida casera</x:String>
+                        <x:String>Con comida cruda</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Button x:Name="AgregarButton"
+                Text="Agregar" 
+                Margin="0,20,0,0"
+                BackgroundColor="#007bff"
+                TextColor="White"
+                CornerRadius="30"
+                FontSize="20" 
+                    FontAttributes="Bold">
+                   
+                    <Button.Triggers>
+                        <DataTrigger TargetType="Button"
+                             Binding="{Binding Source={x:Reference AgregarButton}, Path=IsPressed}"
+                             Value="True">
+                            <Setter Property="BackgroundColor" Value="Orange" />
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+            </StackLayout>
     </Grid>
 
 </ContentPage>
