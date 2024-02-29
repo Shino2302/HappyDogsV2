@@ -1,6 +1,9 @@
 ﻿using HappyDogsV2.ViewModel;
 using HappyDogsV2.Views;
 using Microsoft.Extensions.Logging;
+using Firebase.Database;
+using Firebase.Database.Query;
+
 
 namespace HappyDogsV2
 {
@@ -22,6 +25,10 @@ namespace HappyDogsV2
 #endif
 
             return builder.Build();
+        }
+        public static void Registrar()
+        {
+            FirebaseClient client = new FirebaseClient("https://happydogdb-55b97-default-rtdb.firebaseio.com/");
         }
     }
 }

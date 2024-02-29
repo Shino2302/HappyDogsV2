@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HappyDogsV2.Data;
+using HappyDogsV2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -12,8 +14,11 @@ namespace HappyDogsV2.ViewModel
     {
         #region VARIABLES
         private string _email;
+        private string _name;
         private string _password;
         private string _passwordConfirm;
+        private string _phoneNumber;
+        private string _profileImage;
         #endregion
 
         #region CONSTRUCTOR
@@ -29,6 +34,11 @@ namespace HappyDogsV2.ViewModel
             get { return _email; }
             set { SetValue(ref _email, value); }
         }
+        public string Name
+        {
+            get { return _name; }
+            set { SetValue(ref _name, value); }
+        }
         public string Password
         {
             get { return _password; }
@@ -38,11 +48,23 @@ namespace HappyDogsV2.ViewModel
             get { return _passwordConfirm; }
             set { SetValue(ref _passwordConfirm, value); }
         }
+        public string PhoneNumber
+        {
+            get { return _phoneNumber; }
+            set { SetValue(ref _phoneNumber, value); }
+        }
+        public string ProfileImage
+        {
+            get { return _profileImage; }
+            set { SetValue(ref _profileImage, value); }
+        }
         #endregion
 
         #region METHODS
-        public async Task Register()
+        public async Task Register(UsersModel userToInsert)
         {
+            var newUser = ConecctionWithFireBase.client.Child("Users").OnceAsync<UsersModel>();
+
             await DisplayAlert("Registro Exitoso!",$"El usuario con email: {Email} fue registrado exitosamente", "OK");
             await Navigation.PopAsync();
         }
