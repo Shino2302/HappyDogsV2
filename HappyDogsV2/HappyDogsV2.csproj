@@ -56,8 +56,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="FirebaseAuthentication.net" Version="4.1.0" />
+		<PackageReference Include="FirebaseDatabase.net" Version="4.2.0" />
 		<PackageReference Include="M2Mqtt" Version="4.3.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -101,6 +104,22 @@
 	  <MauiXaml Update="Views\MainMenu\Users.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Certificates\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Certificates\ESP32_CAM.cert.pem">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Certificates\ESP32_CAM.private.key">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Certificates\root-CA.crt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
 	</ItemGroup>
 
 </Project>

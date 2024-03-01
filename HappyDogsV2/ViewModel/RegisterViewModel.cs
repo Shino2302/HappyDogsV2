@@ -61,9 +61,9 @@ namespace HappyDogsV2.ViewModel
         #endregion
 
         #region METHODS
-        public async Task Register(UsersModel userToInsert)
+        public async Task Register()
         {
-            var newUser = ConecctionWithFireBase.client.Child("Users").OnceAsync<UsersModel>();
+            //var newUser = ConecctionWithFireBase.client.Child("Users").OnceAsync<UsersModel>();
 
             await DisplayAlert("Registro Exitoso!",$"El usuario con email: {Email} fue registrado exitosamente", "OK");
             await Navigation.PopAsync();

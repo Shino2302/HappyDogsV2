@@ -20,6 +20,9 @@
                    Margin="0,-50"/>
         </Frame>
 
+        <Label x:Name="Straemsss"
+               TextColor="Black"/>
+
         <Button Text="Tomar Foto" 
                 Grid.Row="2"
                 Grid.Column="0"

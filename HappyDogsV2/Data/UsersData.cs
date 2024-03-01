@@ -7,40 +7,53 @@ using System.Text;
 using System.Threading.Tasks;
 using Firebase.Database.Query;
 using System.Collections.ObjectModel;
+using Firebase.Database;
+using HappyDogsV2.Services;
+using Newtonsoft.Json;
+using System.Linq.Expressions;
+using Firebase.Auth;
 
 namespace HappyDogsV2.Data
 {
     public class UsersData
     {
-        public async Task UserRegister(UsersModel userToInsert)
+        ConecctionWithFireBase connection = new ConecctionWithFireBase();
+
+        UserService userService = new UserService();
+
+        public async Task UserInsert(UsersModel newUser)
         {
-            await ConecctionWithFireBase.client.Child("Users").PostAsync
-                (new UsersModel()
+            try
+            {
+                var registerAuth = await userService.RegisterAsync(newUser.Email, newUser.Password, newUser.Name);
+
+                var firebaseUserId = registerAuth.Uid;
+
+                var datas = new Dictionary<string, UsersModel>();
+                datas.Add(firebaseUserId, new UsersModel
                 {
-                    UserId = Guid.NewGuid(),
-                    Email = userToInsert.Email,
-                    Name = userToInsert.Password,
-                    Password = userToInsert.Password,
-                    PhoneNumber = userToInsert.PhoneNumber,
-                    ProfileImage = userToInsert.ProfileImage
+                    Name = newUser.Name,
+                    Email = newUser.Email,
+                    Password = newUser.Password,
+                    PhoneNumber = newUser.PhoneNumber,
+                    ProfileImage = newUser.ProfileImage,
+                    UID = firebaseUserId
                 });
-        }
-        public async Task UserDelete(Guid userId)
-        {
-            var userToDelete = (await ConecctionWithFireBase.client
-                .Child("Users").OnceAsync<UsersModel>()).
-                Where(a => a.Object.UserId == userId).FirstOrDefault();
 
-            await ConecctionWithFireBase.client.Child("Users").Child(userToDelete.Key).DeleteAsync();
+                var json = JsonConvert.SerializeObject(datas);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await connection.PostAsync("", content);
+                var data = JsonConvert.DeserializeObject<Dictionary<string, UsersModel>>(response);
+                var firebaseKey = data.Keys.FirstOrDefault();
+                var result = response.ToString();
+            }
+            catch (FirebaseAuthException ex){}
+            catch (Exception ex) { }
         }
-
-        public async Task<ObservableCollection<UsersModel>> SeeUserData()
+        public async Task<bool> DeleteUser(string key)
         {
-            var data = await Task.Run(() => ConecctionWithFireBase.client
-                .Child("Users")
-                .AsObservable<UsersModel>()
-                .AsObservableCollection());
-            return data;
+            await connection.DeleteAsync($"");
+            return true;
         }
     }
 }
