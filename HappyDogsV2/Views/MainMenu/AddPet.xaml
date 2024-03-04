@@ -10,7 +10,7 @@
     <StackLayout>
         <Grid>
             <Frame BackgroundColor="#ff7711"
-           Margin="10,155,10,5"
+           Margin="10,155,10,50"
                    BorderColor="Black">
                 <StackLayout>
                     <Label Text="Name of Dog" TextColor="White" FontAutoScalingEnabled="True"/>

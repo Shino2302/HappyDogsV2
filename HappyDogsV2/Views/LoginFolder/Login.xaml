@@ -16,22 +16,25 @@
         </Style>
     </ContentPage.Resources>
     <Grid>
-        <Frame BackgroundColor="#123"
-               Margin="10,155,10,5">
+        <Frame BackgroundColor="#ff7711"
+               Margin="10,175,10,10"
+               BorderColor="Black">
             <StackLayout>
-                <Label Text="Email:"/>
-                <Frame BackgroundColor="#012"
+                <Label Text="Email:"
+                       TextColor="white"/>
+                <Frame BackgroundColor="#000"
                        Margin="0,0,0,10">
                     <Entry Placeholder="Your Email"
-                           TextColor="#EEE"
+                           TextColor="#fff"
                            Margin="-8"
                            Text="{Binding Email}"
                            FontSize="Medium"/>
                 </Frame>
-                <Label Text="Password:"/>
-                <Frame BackgroundColor="#012">
+                <Label Text="Password:"
+                       TextColor="white"/>
+                <Frame BackgroundColor="#000">
                     <Entry Placeholder="Your Passwrod"
-                           TextColor="#EEE"
+                           TextColor="#fff"
                            Margin="-8"
                            Text="{Binding Password}"
                            IsPassword="True"
@@ -39,6 +42,10 @@
                 </Frame>
                 <Button Text="Login"
                         Margin="0,15,0,0"
+                        BackgroundColor="White"
+                        TextColor="#ff7711"
+                        BorderColor="Black"
+                        BorderWidth="2"
                         Command="{Binding GoToMainMenuCommand}"/>
                 <Button Text="¿No tienes una cuenta? Registrate aquí!"
                         Background="Transparent"
@@ -56,8 +63,8 @@
                HorizontalOptions="Center"
                IsClippedToBounds="True"
                Padding="0"
-               BorderColor="Gray"
-               Margin="0,5,0,600">
+               BorderColor="Black"
+               Margin="0,0,0,600">
             <Image Aspect="AspectFit"
                    Source="dotnet_bot.png"
                    SemanticProperties.Description="Cute dot net bot waving hi to you!"

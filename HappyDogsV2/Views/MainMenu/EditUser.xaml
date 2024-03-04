@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HappyDogsV2.Views.MainMenu.PetProfiles.EditPet"
-             Title="EditPet"
+             x:Class="HappyDogsV2.Views.MainMenu.EditUser"
+             Title="EditUser"
              BackgroundImageSource="fondocolor">
     <StackLayout>
-        <Frame HeightRequest="200"
-               WidthRequest="200"
+        <Frame HeightRequest="300"
+               WidthRequest="300"
                CornerRadius="150"
                HorizontalOptions="Center"
                VerticalOptions="Center"
@@ -17,11 +17,11 @@
             <Image Aspect="AspectFit"
                    Source="{Binding Image}"
                    SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                   HeightRequest="300"
-                   WidthRequest="300"
+                   HeightRequest="400"
+                   WidthRequest="400"
                    VerticalOptions="Start"
                    HorizontalOptions="Center" />
-            
+
         </Frame>
         <Button Margin="250,-50,100,0"
                 HeightRequest="50"
@@ -32,67 +32,65 @@
                 BorderColor="#ff7711"
                 />
 
-        <Frame Margin="10,20"
-               BackgroundColor="Black"
-               BorderColor="#ff7711">
-            <StackLayout>
-                <Label Text="Nombre:"
-                       FontSize="Title"
-                       TextColor="White"/>
-                <Entry Placeholder="nuevo nombre"
-                       FontSize="Title"
-                       TextColor="#ff7711"/>
-            </StackLayout>
-        </Frame>
-        
+        <Label Text="{Binding NameOfPet}"
+               TextColor="#111"
+               FontSize="Title"
+               FontAutoScalingEnabled="True"
+               HorizontalTextAlignment="Center"
+               Margin="0,0,0,0"
+               FontAttributes="Bold"/>
         <Frame BackgroundColor="#ff7711"
-               Margin="15,0,15,0"
+               Margin="15,0,15,20"
                BorderColor="Black">
-            <StackLayout>
-                
-                <Label Text="Raza:"
+            <StackLayout >
+                <Label Text="Nombre:"
                            FontSize="Large"
                            TextColor="#fff"
                            FontAttributes="Bold"
                            FontAutoScalingEnabled="True"
                        
                            />
-            
-                <Entry Text="Perro"
+                <Entry Placeholder="you name"
+                       PlaceholderColor="White"
                            FontSize="Large"
                            TextColor="#fff"
                            FontAttributes="Bold"
-                           Margin="100,-50,0,0"
+                           Margin="130,-50,0,10"
                            FontAutoScalingEnabled="True"
                            />
-                <Label Text="Edad:"
+                <Label Text="Email:"
                            FontSize="Large"
                            TextColor="#fff"
                            FontAttributes="Bold"
-                           Margin="0,10"
-                           FontAutoScalingEnabled="True"/>
-                <Entry Text="1 año"
+                           FontAutoScalingEnabled="True"
+                       
+                           />
+                <Entry Placeholder="your email"
+                       PlaceholderColor="White"
                            FontSize="Large"
                            TextColor="#fff"
                            FontAttributes="Bold"
-                           Margin="100,-60,0,-60"
+                           Margin="100,-50,0,10"
                            FontAutoScalingEnabled="True"
                            />
-                <Label Text="Dispenser:"
+                <Label Text="Telefono: "
                            FontSize="Large"
                            TextColor="#fff"
                            FontAttributes="Bold"
-                           Margin="0,70"
+                           Margin="0,0"
                            FontAutoScalingEnabled="True"/>
-                <Picker Margin="160,-120,0,0"
-                        Title="dispesador"
-                        FontSize="Title"
-                        TitleColor="White"
-                        FontAttributes="Bold">
+                <Entry
+                    Placeholder="you phone"
+                    PlaceholderColor="White"
+                           FontSize="Large"
+                           TextColor="#fff"
+                           FontAttributes="Bold"
+                           Margin="140,-50,0,0"
+                           FontAutoScalingEnabled="True"
+                           />
 
-                </Picker>
             </StackLayout>
-            
+
         </Frame>
         <Button Margin="110,50"
                 HeightRequest="70"

@@ -7,7 +7,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Camara" Order="Secondary" Command="{Binding GoToCameraCommand}"/>
         <ToolbarItem Text="Estadisticas" Order="Secondary" Command="{Binding GoToStatisticsCommand}"/>
-        <ToolbarItem Text="Dispensador" Order="Secondary" Command="{Binding GoToDispenserConfigCommand}"/>
+        <ToolbarItem Text="Dispensador" Order="Secondary" Command="{Binding GoToDispenserCommand}"/>
     </ContentPage.ToolbarItems>
     <StackLayout>
         <Frame HeightRequest="300"
@@ -28,7 +28,7 @@
                    HorizontalOptions="Center" />
         </Frame>
         <Label Text="{Binding NameOfPet}"
-               TextColor="#111"
+               TextColor="#000"
                FontSize="Title"
                FontAutoScalingEnabled="True"
                HorizontalTextAlignment="Center"
@@ -39,6 +39,7 @@
                BorderColor="Black">
             <Grid RowDefinitions="50,*"
                   ColumnDefinitions="200,200">
+
                 <Label Text="Raza:"
                        FontSize="Large"
                        TextColor="#fff"
@@ -47,6 +48,15 @@
                        FontAutoScalingEnabled="True"
                        Grid.Column="0"
                        Grid.Row="0"/>
+
+                <Label Text="Raza:"
+                       FontSize="Large"
+                       TextColor="#fff"
+                       FontAttributes="Bold"
+                       Margin="5,10"
+                       FontAutoScalingEnabled="True"
+                       Grid.Column="0"
+                       Grid.Row="3"/>
                 <Label Text="Perro"
                        FontSize="Large"
                        TextColor="#fff"
@@ -95,7 +105,7 @@
                     VerticalOptions="End"
                     Text="Editar Información"
                     FontSize="Medium"
-
+                    Command="{Binding GoToEditCommand}"
                     FontAutoScalingEnabled="True"
                     FontAttributes="Bold"
                     TextColor="#ff7711"
