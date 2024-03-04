@@ -14,6 +14,7 @@
             <Setter Property="Margin" Value="0,0,0,5"/>
             <Setter Property="FontSize" Value="Large"/>
         </Style>
+
     </ContentPage.Resources>
     <Grid>
         <Frame BackgroundColor="#ff7711"
@@ -28,7 +29,8 @@
                            TextColor="#fff"
                            Margin="-8"
                            Text="{Binding Email}"
-                           FontSize="Medium"/>
+                           FontSize="Medium"
+                           x:Name="email"/>
                 </Frame>
                 <Label Text="Password:"
                        TextColor="white"/>
@@ -38,15 +40,27 @@
                            Margin="-8"
                            Text="{Binding Password}"
                            IsPassword="True"
-                           FontSize="Medium"/>
+                           FontSize="Medium"
+                           x:Name="password"
+                           
+                           />
                 </Frame>
                 <Button Text="Login"
-                        Margin="0,15,0,0"
+                        Margin="0,45,0,0"
                         BackgroundColor="White"
                         TextColor="#ff7711"
                         BorderColor="Black"
                         BorderWidth="2"
-                        Command="{Binding GoToMainMenuCommand}"/>
+                        Command="{Binding GoToMainMenuCommand}">
+                    <Button.Triggers>
+                        <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference email}, Path=Text.Length}" Value="0">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                        <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference password}, Path=Text.Length}" Value="0">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
                 <Button Text="¿No tienes una cuenta? Registrate aquí!"
                         Background="Transparent"
                         Padding="15"
