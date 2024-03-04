@@ -60,6 +60,10 @@ namespace HappyDogsV2.ViewModel
                 }
             };
         }
+        public async Task AlimentarPet()
+        {
+            await DisplayAlert("Listo", "se ha alimentado correctamente tu mascota", "OK");
+        }
         public void Mostrar()
         {
             _mascotasDeEjemplo =  new ObservableCollection<ReferenceToObservableCollection>(MostrarImagenes());
@@ -73,6 +77,8 @@ namespace HappyDogsV2.ViewModel
         #endregion
 
         #region COMMANDS
+        public ICommand AlimentarPetCommand => new Command(async () => await AlimentarPet());
+
         public ICommand GoToProfileCommand => new Command(async () => await GoToPetProfile());
         #endregion
     }

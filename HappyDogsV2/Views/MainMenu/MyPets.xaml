@@ -39,16 +39,25 @@
                                        VerticalOptions="Start"
                                        HorizontalOptions="Center" />
                             </Frame>
+                            <Button Margin="105,-35,20,0"
+                                    CornerRadius="50"
+                                    Text="Alimentar"
+                                    BackgroundColor="#ff7711"
+                                    FontAttributes="Bold"
+                                    BorderColor="Black"
+                                    BorderWidth="2"
+                                    Command="{Binding AlimentarPetCommand}"/>
                             <Label Text="{Binding Nombre}"
                                    TextColor="#111"
                                    FontSize="20"
                                    HorizontalTextAlignment="Center"
-                                   Margin="0,5,0,0"
+                                   Margin="0,-5,0,0"
                                    FontAttributes="Bold"/>
                         </StackLayout>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
     </Grid>
 </ContentPage>

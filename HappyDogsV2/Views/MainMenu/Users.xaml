@@ -40,6 +40,7 @@
                BorderColor="Black">
             <Grid ColumnDefinitions="*,*"
                   RowDefinitions="*,*">
+
                 <Label Grid.Row="0"
                        Grid.ColumnSpan="2"
                        Text="Tú Info"
@@ -83,7 +84,8 @@
                 FontSize="Large" BorderColor="Black"
                 BorderWidth="2"
                 BackgroundColor="White"
-                TextColor="#ff7711"/>
+                TextColor="#ff7711"
+                Command="{Binding CerrarSesionCommand}"/>
         <Button Text=" Editar Info "
                 HorizontalOptions="End"
                 VerticalOptions="End"
@@ -93,6 +95,7 @@
                 BorderColor="Black"
                 BorderWidth="2"
                 TextColor="#ff7711"
-                BackgroundColor="White"/>
+                BackgroundColor="White"
+                Command="{Binding editarUserCommand}"/>
     </Grid>
 </ContentPage>
